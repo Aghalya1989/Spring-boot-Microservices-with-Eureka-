@@ -44,6 +44,8 @@ public class VaccinationCenterController {
 		RequiredResponse reqResp = new RequiredResponse();
 		VaccinationCenter center =centerRepo.findById(id).get();
 		reqResp.setCenter(center);
+		
+		
 		//connecting to citizenservice
 		
 		List<Citizen> citizenList =restTemplate.getForObject("http://CITIZEN-SERVICE/citizen/id/"+id, List.class);
