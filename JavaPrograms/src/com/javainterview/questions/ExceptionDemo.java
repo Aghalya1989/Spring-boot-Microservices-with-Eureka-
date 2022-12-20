@@ -12,7 +12,7 @@ public class ExceptionDemo {
 	public static void main(String[] args) {
 		ExceptionDemo e = new ExceptionDemo();
 		try {
-			System.out.println("I am handled");
+			System.out.println("I am handled in the exception");
 			
 		    int	i=10/0;
 			System.out.println("I am handled");
