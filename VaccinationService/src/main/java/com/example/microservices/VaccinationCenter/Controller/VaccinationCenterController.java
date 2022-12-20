@@ -38,7 +38,7 @@ public class VaccinationCenterController {
 	}
 
 	@GetMapping(path= "/id/{id}")
-	//@HystrixCommand(fallbackMethod = "handleCitizenDownTime")
+	@HystrixCommand(fallbackMethod = "handleCitizenDownTime")
 	public ResponseEntity<RequiredResponse> getAlldataBasedonCenterId(@PathVariable Integer id)
 	{
 		RequiredResponse reqResp = new RequiredResponse();
@@ -51,6 +51,7 @@ public class VaccinationCenterController {
 		
 		return new ResponseEntity<RequiredResponse>(reqResp,org.springframework.http.HttpStatus.OK);
 	}
+	//fallBack Method is called when Citizen Service is down
 	public ResponseEntity<RequiredResponse> handleCitizenDownTime(@PathVariable Integer id)
 	{
 		
